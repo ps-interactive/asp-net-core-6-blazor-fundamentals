@@ -1,0 +1,36 @@
+﻿@page "/pieedit"
+@page "/pieedit/{PieId}"
+
+@layout PieLayout
+
+<h3>Create / edit a Pie</h3>
+
+<EditForm Model="@Pie" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary></ValidationSummary>
+    <div>
+        <label for="name">Name: </label>
+        <InputText id="name" @bind-Value="@Pie.Name"></InputText>
+        <ValidationMessage  For="@(() => Pie.Name)" />
+
+    </div>
+
+    <div>
+        <label for="price">Price: </label>
+        <InputNumber id="price" @bind-Value="@Pie.Price"></InputNumber>
+
+    </div>
+
+    <div>
+        <label for="description">Short description: </label>
+        <InputTextArea id="description" @bind-Value="@Pie.ShortDescription"></InputTextArea>
+        <ValidationMessage For="@(() => Pie.ShortDescription)" />
+
+    </div>
+
+    <button type="submit">Save pie</button>
+
+
+</EditForm>
+
+@Message

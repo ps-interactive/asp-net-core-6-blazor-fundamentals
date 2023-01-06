@@ -1,0 +1,20 @@
+﻿@inherits TestContext
+
+@code {
+    
+    [Fact]
+    public void RenderSampleComponentWithValueLessThanOrEqualToFive()
+    {
+        var cut = Render(@<StockCount NumberInStock="3" />);
+
+        cut.MarkupMatches("<h4>Only 3 items in stock, order more soon!</h4>");
+    }
+
+    [Fact]
+    public void RenderSampleComponentWithValueMoreThanFive()
+    {
+        var cut = Render(@<StockCount NumberInStock="7" />);
+
+        cut.MarkupMatches("<h4>You currently have 7 items in stock!</h4>");
+    }
+}
