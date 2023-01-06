@@ -1,0 +1,12 @@
+﻿@page "/piedetails/{PieId}"
+@layout PieLayout
+
+@if (Pie != null)
+{
+    <div>
+        <h3>Pie Details for @Pie.Name</h3>
+
+        <br />
+        Name: @Pie.Name
+    </div>
+}

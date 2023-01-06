@@ -1,0 +1,34 @@
+﻿@page "/pieoverview"
+@layout PieLayout
+
+<h3>Pie overview</h3>
+
+@if(Pies != null)
+{
+<table class="table table-light">
+    <thead class="table-primary">
+        <tr>
+            <th></th>
+            <th>Pie ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pie in Pies)
+        {
+            <ErrorBoundary>
+                <ChildContent>
+                    <PieCard Pie="pie"></PieCard>
+                </ChildContent>
+                <ErrorContent>
+                    <p>Something went wrong!</p>
+                </ErrorContent>
+            </ErrorBoundary>
+        }
+
+    </tbody>
+</table>
+}

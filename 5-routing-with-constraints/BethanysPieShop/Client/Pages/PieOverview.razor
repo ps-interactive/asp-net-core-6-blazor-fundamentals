@@ -1,0 +1,28 @@
+﻿
+@layout PieLayout
+
+<h3>Pie overview</h3>
+
+<table class="table table-light">
+    <thead class="table-primary">
+        <tr>
+            <th></th>
+            <th>Pie ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pie in Pies)
+        {
+            <tr>
+                <td>@pie.PieId</td>
+                <td>@pie.Name</td>
+                <td>@pie.Price</td>
+                <td></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
