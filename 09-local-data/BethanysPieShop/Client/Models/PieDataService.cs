@@ -8,12 +8,10 @@ namespace BethanysPieShop.Client.Models
     public class PieDataService : IPieDataService
     {
         private readonly HttpClient _httpClient = default!;
-        private readonly ILocalStorageService _localStorageService;
 
-        public PieDataService(HttpClient httpClient, ILocalStorageService localStorageService)
+        public PieDataService(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _localStorageService = localStorageService;
         }
 
         public async Task<IEnumerable<Pie>> GetAllPies()

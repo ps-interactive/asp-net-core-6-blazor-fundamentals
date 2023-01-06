@@ -11,12 +11,11 @@ namespace BethanysPieShop.Client.Pages
 
         public Pie Pie { get; set; }
 
-        [Inject]
-        public IPieDataService PieDataService { get; set; }
+     
 
         protected async override Task OnInitializedAsync()
         {
-            Pie = await PieDataService.GetPieById(int.Parse(PieId));
+           
         }
     }
 }
